@@ -104,14 +104,20 @@
             android:layout_marginTop="2dp"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-                <Button
-                    android:layout_width="350dp"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="20dp"
+                android:outlineSpotShadowColor="@color/white"
+                android:outlineAmbientShadowColor="@color/white"
+                android:layout_gravity="center"
+                app:cardElevation="15dp">
+                <TextView
+                    android:layout_width="250dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:background="#F47047"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold"
@@ -128,14 +134,19 @@
             android:layout_marginTop="2dp"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp">
-                <Button
-                    android:layout_width="350dp"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="20dp"
+                android:layout_gravity="center"
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                app:cardElevation="15dp">
+                <TextView
+                    android:layout_width="250dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#F47047"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold"

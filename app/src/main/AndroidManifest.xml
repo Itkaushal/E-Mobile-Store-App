@@ -12,6 +12,33 @@
         android:theme="@style/Theme.3dotmenu"
         tools:targetApi="31">
         <activity
+            android:name=".GrocerysList"
+            android:exported="false" />
+        <activity
+            android:name=".VehiclsList"
+            android:exported="false" />
+        <activity
+            android:name=".ClothList"
+            android:exported="false" />
+        <activity
+            android:name=".AcceriesList"
+            android:exported="false" />
+        <activity
+            android:name=".GadgetList"
+            android:exported="false" />
+        <activity
+            android:name=".UserLogin"
+            android:exported="false" />
+        <activity
+            android:name=".UserRegister"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contact_us"
+            android:exported="false" />
+        <activity
             android:name=".Order_bartan"
             android:exported="false" />
         <activity
@@ -87,7 +114,7 @@
             android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

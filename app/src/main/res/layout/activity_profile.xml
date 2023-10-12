@@ -1,4 +1,4 @@
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,151 +6,17 @@
     tools:context=".Profile"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<LinearLayout android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    tools:context=".Profile"
-    android:orientation="vertical">
-  <androidx.cardview.widget.CardView
-      android:layout_width="200dp"
-      android:layout_height="200dp"
-      android:layout_marginTop="20dp"
-    app:cardElevation="10dp"
-      android:layout_gravity="center"
-    app:cardCornerRadius="10dp">
-  <de.hdodenhof.circleimageview.CircleImageView
-      android:id="@+id/user_profile_photo"
-      android:layout_width="200dp"
-      android:layout_height="200dp"
-      android:src="@drawable/img"
-      android:scaleType="centerCrop"/>
-  </androidx.cardview.widget.CardView>
-
-  <androidx.cardview.widget.CardView
-      android:layout_width="150dp"
-      android:layout_marginTop="10dp"
-      android:layout_height="50dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
-  <TextView
-      android:layout_width="150dp"
-      android:layout_height="50dp"
-    android:text="@string/profile"
-      android:gravity="center"
-    android:textColor="@color/black"
-    android:textSize="25sp"
-      android:background="#B6DFF8"
-    android:textStyle="bold"/>
-  </androidx.cardview.widget.CardView>
-
-  <androidx.cardview.widget.CardView
-      android:layout_width="400dp"
-      android:layout_marginTop="30dp"
-      android:layout_height="50dp"
-      app:cardCornerRadius="10dp"
-      app:cardElevation="10dp">
-  <TextView
-      android:layout_width="400dp"
-      android:layout_height="50dp"
-    android:textStyle="bold"
-      android:gravity="center"
-      android:background="#DCD4D4"
-    android:textSize="20sp"
-    android:textColor="@color/black"
-    android:text="@string/name_kaushlendra_kumar"/>
-  </androidx.cardview.widget.CardView>
-
-<androidx.cardview.widget.CardView
-    android:layout_width="400dp"
-    android:layout_marginTop="20dp"
-    android:layout_height="50dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
-
-  <TextView
-      android:layout_width="400dp"
-      android:layout_height="50dp"
-      android:background="#DCD4D4"
-      android:gravity="center"
-      android:text="@string/email_kaushalkumar00277_gmail_com"
-      android:textColor="@color/black"
-      android:textSize="20sp"
-      android:textStyle="bold"
-      tools:ignore="TextSizeCheck" />
-</androidx.cardview.widget.CardView>
-
-  <androidx.cardview.widget.CardView
-      android:layout_width="400dp"
-      android:layout_marginTop="20dp"
-      android:layout_height="50dp"
-      app:cardCornerRadius="10dp"
-      app:cardElevation="10dp">
-  <TextView
-      android:layout_width="400dp"
-      android:layout_height="50dp"
-      android:background="#DCD4D4"
-      android:gravity="center"
-    android:textStyle="bold"
-    android:textSize="20sp"
-    android:textColor="@color/black"
-    android:text="@string/age_21_year_old"/>
-  </androidx.cardview.widget.CardView>
-
-  <androidx.cardview.widget.CardView
-      android:layout_width="400dp"
-      android:layout_marginTop="20dp"
-      android:layout_height="50dp"
-      app:cardCornerRadius="10dp"
-      app:cardElevation="10dp">
-  <TextView
-      android:layout_width="400dp"
-      android:layout_height="50dp"
-    android:text="@string/profile_android_developer"
-    android:textColor="@color/black"
-    android:textSize="20sp"
-      android:gravity="center"
-      android:background="#DCD4D4"
-    android:textStyle="bold" />
-  </androidx.cardview.widget.CardView>
-
-  <androidx.cardview.widget.CardView
-      android:layout_width="400dp"
-      android:layout_marginTop="20dp"
-      android:layout_height="50dp"
-      app:cardCornerRadius="10dp"
-      app:cardElevation="10dp">
 
     <TextView
-        android:layout_width="400dp"
-        android:layout_height="50dp"
-        android:background="#DCD4D4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/display_textview"
+        android:background="#B6DFF8"
         android:gravity="center"
-        android:text="@string/location_raebareli_uttar_pradesh"
+        android:text="display Info"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="TextSizeCheck" />
-  </androidx.cardview.widget.CardView>
-
-
-  <androidx.cardview.widget.CardView
-      android:layout_width="400dp"
-      android:layout_marginTop="20dp"
-      android:layout_height="50dp"
-      app:cardCornerRadius="10dp"
-      app:cardElevation="10dp">
-
-    <TextView
-        android:layout_width="400dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="#DCD4D4"
-        android:gravity="center"
-        android:text="@string/companyname_ducat_noida"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="TextSizeCheck" />
-  </androidx.cardview.widget.CardView>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 </LinearLayout>
-</ScrollView>

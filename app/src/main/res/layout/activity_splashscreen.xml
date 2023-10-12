@@ -1,0 +1,10 @@
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Splashscreen"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/icon_app"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+</LinearLayout>
