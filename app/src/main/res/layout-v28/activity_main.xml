@@ -2,6 +2,7 @@
 <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:scrollbarSize="0dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".MainActivity"
@@ -10,7 +11,6 @@
     android:layout_width="match_parent"
     tools:context=".MainActivity"
     android:background="#DCD4D4"
-
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -34,6 +34,8 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:hapticFeedbackEnabled="true"
+        android:scrollIndicators="none"
+        android:scrollbarSize="0dp"
         android:layout_gravity="center_vertical"
         android:layout_height="wrap_content">
     <LinearLayout
@@ -53,14 +55,14 @@
                 android:layout_height="80dp"
                 android:onClick="gadjetlist"
                 android:scaleType="centerCrop"
-                android:src="@drawable/gadjeticon"
+                android:src="@drawable/gadj"
                 tools:ignore="SpeakableTextPresentCheck" />
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Gadget"
                 android:textSize="15sp"
-                android:textColor="#38603A"
+                android:textColor="#F47047"
                 android:textStyle="normal"
                 android:gravity="center"/>
         </LinearLayout>
@@ -76,13 +78,13 @@
                 android:layout_height="80dp"
                 android:onClick="accesrieslist"
                 android:scaleType="centerCrop"
-                android:src="@drawable/acceriesicon"/>
+                android:src="@drawable/accesri"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Acceries"
                 android:textSize="15sp"
-                android:textColor="#38603A"
+                android:textColor="#F47047"
                 android:textStyle="normal"
                 android:gravity="center"/>
         </LinearLayout>
@@ -98,13 +100,13 @@
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
                 android:onClick="clothlist"
-                android:src="@drawable/clothsicon"/>
+                android:src="@drawable/clot"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Cloths"
                 android:textSize="15sp"
-                android:textColor="#38603A"
+                android:textColor="#F47047"
                 android:textStyle="normal"
                 android:gravity="center"/>
         </LinearLayout>
@@ -120,13 +122,13 @@
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
                 android:onClick="vehiclslist"
-                android:src="@drawable/vehiclsicon"/>
+                android:src="@drawable/vehic"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Vehicls"
                 android:textSize="15sp"
-                android:textColor="#38603A"
+                android:textColor="#F47047"
                 android:textStyle="normal"
                 android:gravity="center"/>
         </LinearLayout>
@@ -142,13 +144,13 @@
                 android:onClick="groceryslist"
                 android:layout_height="80dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/groceryicon"/>
+                android:src="@drawable/groc"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="Grocerys"
                 android:textSize="15sp"
-                android:textColor="#38603A"
+                android:textColor="#F47047"
                 android:textStyle="normal"
                 android:gravity="center"/>
         </LinearLayout>
@@ -171,7 +173,7 @@
             android:textColor="#F47047"
             android:gravity="center_vertical"
             android:text="@string/top_deals_offer"
-            android:textSize="20sp"/>
+            android:textSize="15sp"/>
 
     </LinearLayout>
 
@@ -184,6 +186,7 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:scrollbarSize="0dp"
             android:contentDescription="@string/app_name"
             tools:ignore="UselessParent">
             <LinearLayout
@@ -218,7 +221,7 @@
                     android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/cycle"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"/>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -248,7 +251,8 @@
                     android:layout_width="300dp"
                     android:background="@drawable/earphone"
                     android:layout_height="match_parent"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"/>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -293,7 +297,7 @@
                     android:layout_width="300dp"
                     android:background="@drawable/shoes"
                     android:layout_height="match_parent"
-                    tools:ignore="ContentDescription" />
+                    tools:ignore="ContentDescription"/>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </HorizontalScrollView>
@@ -323,7 +327,7 @@
         android:textColor="#F47047"
         android:gravity="center_vertical"
         android:text="@string/top_selling_products"
-        android:textSize="20sp"/>
+        android:textSize="15sp"/>
 
     </LinearLayout>
 
@@ -332,96 +336,102 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <androidx.cardview.widget.CardView
-            app:cardElevation="10dp"
-            android:outlineAmbientShadowColor="@color/white"
-            android:outlineSpotShadowColor="@color/white"
-            android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_height="wrap_content">
-            <LinearLayout
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
                 android:layout_width="150dp"
-                android:background="#A6D4EF"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ImageView
-                    android:id="@+id/img1"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:background="@drawable/img_1"
-                    android:contentDescription="@string/app_name"
-                    android:onClick="mobilephone"
-                    tools:ignore="DuplicateSpeakableTextCheck" />
-                <TextView
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white">
+                <LinearLayout
                     android:layout_width="150dp"
+                    android:background="#A6D4EF"
                     android:layout_height="wrap_content"
-                    android:text="@string/galaxy_s23_ultra"
-                    android:textColor="#F47047"
-                    android:textSize="20sp"
-                    android:textStyle="normal"/>
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="20sp"
-                    android:textColor="#F47047"
-                    android:text="@string/blacks"/>
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/price_999"
-                    android:textColor="#8E24AA"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            app:cardElevation="10dp"
-            android:outlineAmbientShadowColor="@color/white"
-            android:outlineSpotShadowColor="@color/white"
-            android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_height="wrap_content">
-            <LinearLayout
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:background="@drawable/img_1"
+                        android:contentDescription="@string/app_name"
+                        android:onClick="mobilephone" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Galaxy s23"
+                        android:textColor="#F47047"
+                        android:textSize="15sp"
+                        android:textStyle="normal"/>
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="15sp"
+                        android:textColor="#F47047"
+                        android:text="ultra"/>
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Price:- ₹99,999"
+                        android:textColor="#8E24AA"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+            <androidx.cardview.widget.CardView
+                app:cardElevation="10dp"
                 android:layout_width="150dp"
-                android:background="#A6D4EF"
                 android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-                <ImageView
-                    android:id="@+id/img2"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:background="@drawable/img_2"
-                    android:contentDescription="@string/app_name"
-                    android:onClick="Watch" />
-                <TextView
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white">
+                <LinearLayout
                     android:layout_width="150dp"
+                    android:background="#A6D4EF"
                     android:layout_height="wrap_content"
-                    android:textStyle="normal"
-                    android:textSize="20sp"
-                    android:textColor="#F47047"
-                    android:text="@string/apple_watch"/>
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/blek"
-                    android:textColor="#F47047"
-                    android:textSize="20sp"
-                    android:textStyle="normal"/>
-                <TextView
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="#8E24AA"
-                    android:text="@string/price_512"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:background="@drawable/img_2"
+                        android:contentDescription="@string/app_name"
+                        android:onClick="Watch" />
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/apple_watch"
+                        android:textColor="#F47047"
+                        android:textSize="15sp"
+                        android:textStyle="normal"/>
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="normal"
+                        android:textSize="15sp"
+                        android:textColor="#F47047"
+                        android:text="@string/black"/>
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Price:- ₹8500"
+                        android:textColor="#8E24AA"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 <!-- Part 2 -->
@@ -429,13 +439,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp">
+        android:layout_weight="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
             android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             android:layout_height="wrap_content"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white">
@@ -456,13 +470,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/sony_smart_tv"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/led_smarttv"/>
                 <TextView
@@ -470,16 +484,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/price_30"
                     android:textColor="#8E24AA"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
             android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             android:layout_height="wrap_content"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white">
@@ -500,24 +518,25 @@
                     android:layout_height="wrap_content"
                     android:text="@string/sport_soes"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal" />
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/white"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal" />
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/price_12"
                     android:textColor="#8E24AA"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
     <!-- Part 3 -->
@@ -526,14 +545,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp">
+        android:layout_weight="2"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
             android:layout_width="150dp"
             android:outlineSpotShadowColor="@color/white"
             android:outlineAmbientShadowColor="@color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="150dp"
@@ -553,13 +577,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/lehnga_wedding"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/pink_white"/>
                 <TextView
@@ -567,18 +591,22 @@
                     android:layout_height="wrap_content"
                     android:text="@string/price_25"
                     android:textColor="#8E24AA"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
             android:layout_width="150dp"
             android:outlineSpotShadowColor="@color/white"
             android:outlineAmbientShadowColor="@color/white"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="150dp"
@@ -590,14 +618,14 @@
                     android:id="@+id/img8"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:background="@drawable/kurtapjama"
+                    android:background="@drawable/kurta"
                     android:contentDescription="@string/app_name"
                     android:onClick="Kurtapjama" />
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/man_kurta_pajama"/>
                 <TextView
@@ -605,17 +633,18 @@
                     android:layout_height="wrap_content"
                     android:text="@string/black"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textColor="#8E24AA"
                     android:text="@string/price_20"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -624,11 +653,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp">
+        android:layout_weight="2"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"
             android:layout_width="150dp"
@@ -650,13 +684,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/buds_boat"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/black_earbuds"/>
                 <TextView
@@ -664,15 +698,19 @@
                     android:layout_height="wrap_content"
                     android:text="@string/price_5"
                     android:textColor="#8E24AA"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"
             android:layout_width="150dp"
@@ -693,7 +731,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/earphone"/>
                 <TextView
@@ -701,17 +739,18 @@
                     android:layout_height="wrap_content"
                     android:text="@string/black_wire"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textColor="#8E24AA"
                     android:text="@string/price_2"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -720,13 +759,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="10dp"
+        android:layout_weight="2">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
             android:layout_width="150dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
             android:outlineSpotShadowColor="@color/white"
             android:outlineAmbientShadowColor="@color/white"
             android:layout_height="wrap_content">
@@ -747,13 +790,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/cycle_ranger"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/boys_riding"
                     tools:ignore="TooManyViews" />
@@ -762,16 +805,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/price_199"
                     android:textColor="#8E24AA"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
             android:layout_width="150dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
             android:outlineSpotShadowColor="@color/white"
             android:outlineAmbientShadowColor="@color/white"
             android:layout_height="wrap_content">
@@ -791,7 +838,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/ryal_enfield_bike"/>
                 <TextView
@@ -799,17 +846,18 @@
                     android:layout_height="wrap_content"
                     android:text="@string/classic_355"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textColor="#8E24AA"
                     android:text="@string/price_399"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 
@@ -818,12 +866,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="10dp"
+        android:layout_weight="2">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             android:layout_width="150dp"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"
@@ -845,13 +897,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/grocery_store"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/foods"/>
                 <TextView
@@ -859,15 +911,19 @@
                     android:layout_height="wrap_content"
                     android:text="@string/price_3"
                     android:textColor="#8E24AA"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textStyle="bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
         <androidx.cardview.widget.CardView
             app:cardElevation="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             android:layout_width="150dp"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"
@@ -888,7 +944,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="normal"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="#F47047"
                     android:text="@string/bartan"/>
                 <TextView
@@ -896,17 +952,18 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kitchen_set"
                     android:textColor="#F47047"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="normal"/>
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="13sp"
                     android:textColor="#8E24AA"
                     android:text="@string/price_10"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

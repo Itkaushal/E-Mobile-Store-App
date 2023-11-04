@@ -3,37 +3,63 @@ package com.example.a3dotmenu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.a3dotmenu.databinding.ActivityUserRegisterBinding;
+
 public class UserRegister extends AppCompatActivity {
-    EditText editTextname, editTextemail, editTextpassword;
+   ActivityUserRegisterBinding binding;
+   DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_register);
+
+        binding = ActivityUserRegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
-        editTextname=findViewById(R.id.ev_name_register);
-        editTextemail=findViewById(R.id.ev_email_register);
-        editTextpassword=findViewById(R.id.ev_password_register);
+        databaseHelper = new DatabaseHelper(this);
+
+        binding.tvButtonReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = binding.evEmailRegister.getText().toString();
+                String password = binding.evPassReg.getText().toString();
+                String cpassword = binding.evCpassReg.getText().toString();
+
+                if (email.equals("") || password.equals("") || cpassword.equals(""))
+                    Toast.makeText(UserRegister.this, "All fields are mandatory", Toast.LENGTH_SHORT).show();
+                else {
+                    if (password.equals(cpassword)){
+                        Boolean checkUserEmail = databaseHelper.checkEmail(email);
+
+                        if (checkUserEmail == false){
+                            Boolean insert = databaseHelper.insertData(email,password);
+
+                            if (insert == true){
+                                Toast.makeText(UserRegister.this, "Register Success", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(getApplicationContext(),UserLogin.class);
+                                startActivity(i);
+                            } else {
+                                Toast.makeText(UserRegister.this, "Register Failed!", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(UserRegister.this, "user already exists", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(UserRegister.this, "Password Invalid", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
     }
 
-    public void registerclick(View view) {
-        SharedPreferences sp = getSharedPreferences("MyPrefs",MODE_PRIVATE);
-        String newUser=editTextname.getText().toString();
-        String newEmail=editTextemail.getText().toString();
-        String newPassword=editTextpassword.getText().toString();
-        SharedPreferences.Editor editor = sp.edit();
-
-        editor.putString(newUser + newPassword + "data", newUser + "\n" +newEmail);
-        editor.commit();
-        Intent intent = new Intent(UserRegister.this,UserLogin.class);
-        startActivity(intent);
-        Toast.makeText(this, "Register Successfully", Toast.LENGTH_SHORT).show();
+    public void login(View view) {
+        Intent i = new Intent(getApplicationContext(),UserLogin.class);
+        startActivity(i);
     }
 }

@@ -1,0 +1,53 @@
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".AcceriesList"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="acceriesonclick"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:id="@+id/iv_image"
+            android:layout_height="150dp">
+
+        </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Products"
+                android:id="@+id/tv_product"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#F47047"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textAlignment="center">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Price"
+                android:textColor="#8E24AA"
+                android:gravity="center"
+                android:id="@+id/tv_price"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textAlignment="center">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

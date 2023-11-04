@@ -22,37 +22,39 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textStyle="italic"
+                android:textStyle="normal"
                 android:textColor="#F47047"
                 android:textSize="25sp"
-                android:text="👤User Login"
+                android:text="👤User Login Here!"
                 android:gravity="center"
                 android:elevation="10dp" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="350dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
         android:textSize="20sp"
-        android:hint="Name:"
-        android:id="@+id/ev_name_login"
+        android:padding="10dp"
+        android:hint="Email📧:"
+        android:id="@+id/ev_email_log"
         android:inputType="textEmailAddress"
         android:background="#DCD4D4"
         android:autofillHints="emailAddress"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="70dp"
         android:textColor="@color/black"
         android:textStyle="normal"/>
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="350dp"
         android:layout_height="50dp"
+        android:padding="10dp"
         android:textSize="20sp"
+        android:layout_gravity="center"
         android:id="@+id/ev_password_login"
-        android:inputType="numberPassword"
-        android:hint="Password:"
+        android:inputType="textPassword"
+        android:hint="Password🔑:"
         android:autofillHints="password"
         android:background="#DCD4D4"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="50dp"
         android:textColor="@color/black"
         android:textStyle="normal"/>
